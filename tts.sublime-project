@@ -1,0 +1,57 @@
+{
+	"folders":
+	[
+		{
+			"path": ".",
+		},
+		{
+			"follow_symlinks": true,
+			"path": "/Users/andy/ws/tts",
+		},
+	],
+	"build_systems":
+	[
+		{
+			/*"file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",*/
+			"name": "Andy's build",
+			/*"selector": "source.python",*/
+			/*"shell_cmd": "\"python\" -u \"$file\"",*/
+			"cancel": "terminus_cancel_build",
+			"cmd":
+			[
+				"python",
+				"$file"
+			],
+			"target": "terminus_exec",
+			"working_dir": "$folder",
+		},
+		{
+			"file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",
+			"name": "Anaconda Python Builder",
+			"selector": "source.python",
+			"shell_cmd": "\"python\" -u \"$file\""
+		},
+	],
+    "settings":
+    {
+        "anaconda_linting": true,
+        "anaconda_linting_behaviour": "always",
+        "pep257": false,
+        "python_interpreter": "python",
+        "test_command": "pytest -vv",
+        "use_pylint": false,
+        "validate_imports": true,
+    },
+    /*"build_systems":
+    [
+        {
+            "name": "Andy's build",
+            "target": "terminus_exec",
+            "cancel": "terminus_cancel_build",
+            "cmd": [
+                "python", "$file"
+            ],
+            "working_dir": "$folder"
+        }
+    ]*/
+}
