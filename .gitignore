@@ -144,3 +144,4 @@ dmypy.json
 
 # andy
 .DS_Store
+*.mp3
